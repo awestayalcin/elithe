@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product | ELITHÉ</title>
+<meta name="description" content="Bekijk de hele collectie van ELITHÉ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bar">Nieuwe collectie is binnen</div>
+<header>
+  <button class="menubtn" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg class="i-open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <a class="logo" href="index.html"><img src="logo.svg" alt="ELITHÉ" width="3513" height="996"></a>
+  <nav id="nav"><a href="index.html#trending">Trending</a><a href="collectie.html">Collection</a><a href="index.html#contact">Contact</a></nav>
+  <button class="cartbtn" id="open" aria-label="Winkelwagen"><span class="cart-txt">Winkelwagen (<span id="count">0</span>)</span><svg class="cart-ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2h10.2l2-8H6.3"/></svg><span class="badge" id="badge"></span></button>
+</header>
+
+<main>
+  <section>
+    <div id="product"></div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 ELITHÉ. Alle rechten voorbehouden.</span>
+  <span><a href="mailto:info@ruve.nl">info@ruve.nl</a> · <a href="https://www.instagram.com/" rel="noopener">Instagram</a></span>
+</footer>
+
+<aside id="cart" aria-label="Winkelwagen">
+  <header><strong>Winkelwagen</strong><button class="cartbtn" id="close">Sluiten</button></header>
+  <ul id="lines"></ul>
+  <div class="total"><span>Totaal</span><span id="sum">€0,00</span></div>
+  <button class="btn" onclick="alert('Afrekenen volgt zodra je een betaalprovider koppelt.')">Afrekenen</button>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>

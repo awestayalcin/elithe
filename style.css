@@ -1,0 +1,159 @@
+:root{--bg:#FFFFFF;--ink:#111111;--wine:#111111;--moss:#F4CFD7;--line:#EBD9DD;--card:#FCF1F3;--tint:#F4CFD7;/* Liever licht blauw? Zet --moss, --line, --card en --tint op: #CFE3F4, #D9E6F1, #F0F6FB, #CFE3F4 */
+--serif:"Bodoni Moda",Didot,"Times New Roman",serif;--sans:"Hanken Grotesk",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--sans)}
+a{color:inherit;text-decoration:none}
+button,select,input,textarea{color:inherit}
+a[x-apple-data-detectors],a[href^="tel"],a[href^="mailto"]{color:inherit!important;text-decoration:none}
+*{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid #111;outline-offset:3px}
+.stage{min-height:calc(100vh - var(--top,120px));min-height:calc(100svh - var(--top,120px));display:grid;place-items:center;padding:1.5rem 0}
+.banner{width:min(87.5rem,calc(100% - 2*clamp(1rem,5vw,3.5rem)),calc((100vh - var(--top,120px) - 3rem)*2.4924));width:min(87.5rem,calc(100% - 2*clamp(1rem,5vw,3.5rem)),calc((100svh - var(--top,120px) - 3rem)*2.4924));margin:0;border-radius:6px;position:relative;container-type:inline-size;aspect-ratio:1979/794;background:#FBE9EB center/100% 100% no-repeat}
+.banner a{position:absolute;left:50%;top:69%;transform:translate(-50%,-50%);white-space:nowrap;color:#DD8C9C;font:400 max(.6rem,1.5cqw) var(--serif);letter-spacing:.12em;padding-bottom:.2em;border-bottom:1px solid transparent}
+.banner a:hover{border-color:currentColor}
+.bar{background:#111;color:#fff;font-size:.85rem;text-align:center;padding:.5rem 1rem}
+header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.2rem clamp(1rem,5vw,3.5rem);position:sticky;top:0;background:var(--bg);z-index:5}
+.logo{grid-column:2;grid-row:1;font:italic 400 2rem/1 var(--serif);letter-spacing:.02em}
+nav{grid-column:1;grid-row:1;display:flex;gap:2rem;justify-self:start}
+#open{grid-column:3;grid-row:1;justify-self:end}
+nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.cartbtn{background:none;border:1px solid var(--ink);border-radius:999px;padding:.4rem 1rem;font:inherit;cursor:pointer}
+.cartbtn:hover{background:var(--ink);color:var(--bg)}
+.btn{display:inline-block;align-self:flex-start;background:var(--ink);color:var(--bg);padding:.85rem 2rem;border:0;border-radius:999px;font:500 1rem var(--sans);cursor:pointer}
+.btn:hover{background:#333}
+section{padding:clamp(3rem,7vw,6rem) clamp(1rem,5vw,3.5rem)}
+h2,.h2{font:400 clamp(2rem,4vw,3rem)/1.1 var(--serif);margin-bottom:.5rem}
+.sub{color:#555;margin-bottom:2.5rem}
+.grid{margin-top:1.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(14.375rem,1fr));gap:1.5rem}
+.item{display:flex;flex-direction:column}
+.pic{aspect-ratio:3/4;border-radius:4px;display:flex;align-items:flex-end;padding:1rem;font:italic 1.6rem var(--serif)}
+.item h3{font:600 1rem var(--sans);margin-top:.8rem}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:.2rem}
+.row button{background:none;border:0;border-bottom:1px solid var(--ink);font:inherit;cursor:pointer;padding:0}
+.row button:hover{opacity:.6}
+form{display:grid;gap:.8rem;max-width:28.75rem}
+input,textarea{font:inherit;padding:.8rem 1rem;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+footer{padding:2rem clamp(1rem,5vw,3.5rem);border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.9rem}
+aside{position:fixed;top:0;right:0;height:100%;width:min(23.75rem,100%);background:var(--card);padding:1.5rem;transform:translateX(100%);transition:transform .3s;z-index:10;display:flex;flex-direction:column;}
+aside.open{transform:none}
+aside header{display:flex;justify-content:space-between;align-items:center;position:static;padding:0 0 1rem;border:0}
+#lines{flex:1;overflow:auto;list-style:none;padding:0}
+#lines li{display:flex;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid var(--line)}
+#lines button{background:none;border:0;color:#111;cursor:pointer;margin-left:.6rem}
+.total{display:flex;justify-content:space-between;font-weight:600;padding:1rem 0}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.crumbs{font-size:.9rem;color:#555;margin-bottom:1rem}
+.crumbs a:hover{text-decoration:underline}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.toolbar select{font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
+.more{margin-top:2.5rem;text-align:center}
+.more .btn{align-self:auto}
+.page-top{padding-bottom:0}
+.item>a{display:block}
+.item h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+#product{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);align-items:start}
+.big .pic{width:100%;font-size:3rem}
+.info .h2{margin-bottom:.4rem}
+.price{font-size:1.3rem;margin-bottom:1.2rem}
+.desc{max-width:46ch;color:#555;margin-bottom:1.6rem}
+.label{font-weight:600;margin-bottom:.5rem}
+.sizes{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.8rem}
+.sizes button{min-width:3rem;padding:.6rem .9rem;border:1px solid var(--ink);border-radius:999px;background:var(--bg);font:inherit;cursor:pointer}
+.sizes button:hover{background:var(--card)}
+.sizes button.on{background:var(--ink);color:var(--bg)}
+.warn{min-height:1.5rem;font-size:.9rem;margin-bottom:.4rem}
+@media(max-width:760px){#product{grid-template-columns:1fr}}
+aside.open{box-shadow:-8px 0 30px rgba(0,0,0,.12)}
+
+.menubtn{display:none}
+@media(max-width:760px){
+ .bar{font-size:.8rem}
+ header{padding:.8rem 1rem}
+ .menubtn{display:inline-block;grid-column:1;grid-row:1;justify-self:start;background:none;border:0;font:500 1rem var(--sans);padding:.6rem .4rem .6rem 0;cursor:pointer;min-height:44px}
+ .logo{font-size:1.8rem}
+ #open{white-space:nowrap;font-size:.9rem;padding:.55rem .9rem;min-height:44px}
+ nav{display:none;grid-column:auto;grid-row:auto;justify-self:stretch;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);padding:0 1rem 1rem;box-shadow:0 12px 20px rgba(0,0,0,.06)}
+ header.open nav{display:flex}
+ nav a{padding:.9rem 0;font-size:1.1rem;border-top:1px solid var(--line)}
+ .stage{padding:1rem 0}
+ .banner{width:min(calc(100% - 2rem),calc((100vh - var(--top,120px) - 2rem)*.7692),calc((100svh - var(--top,120px) - 2rem)*.7692));aspect-ratio:1000/1300;background-size:100% 100%;background-position:center}
+ .banner a{top:59%;font-size:max(.75rem,3cqw);letter-spacing:.1em}
+ section{padding:2.2rem 1rem}
+ h2,.h2{font-size:2rem}
+ .grid{grid-template-columns:repeat(2,1fr);gap:1.2rem .8rem}
+ .pic{padding:.7rem;font-size:1.2rem}
+ .row{flex-direction:column;align-items:flex-start;gap:.3rem}
+ .row button{min-height:32px;text-align:left}
+ .sizes button{min-height:44px}
+ .btn{width:100%;text-align:center;min-height:48px}
+ .more .btn{width:auto}
+ #product{gap:1.2rem}
+ .big .pic{aspect-ratio:4/5}
+ .toolbar{flex-wrap:wrap}
+ footer{flex-direction:column}
+}
+
+.cart-ico,.badge,.i-close{display:none}
+.cartbtn{position:relative}
+@media(max-width:760px){
+ .menubtn{padding:.6rem;margin-left:-.6rem;color:#111}
+ .i-open{display:block}
+ header.open .i-open{display:none}
+ header.open .i-close{display:block}
+ #open{border:0;background:none;padding:.6rem;margin-right:-.6rem;color:#111;min-width:44px}
+ #open:hover{background:none;color:#111}
+ .cart-txt{display:none}
+ .cart-ico{display:block}
+ .badge{display:flex;position:absolute;top:2px;right:-2px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#111;color:#fff;font:600 .7rem/18px var(--sans);justify-content:center}
+ .badge:empty{display:none}
+}
+
+/* Menu en winkelwagen als iconen op alle schermen */
+.menubtn{display:inline-flex;align-items:center;grid-column:1;grid-row:1;justify-self:start;background:none;border:0;padding:.6rem;margin-left:-.6rem;min-height:44px;cursor:pointer;color:#111}
+.i-open{display:block}
+header.open .i-open{display:none}
+header.open .i-close{display:block}
+#open{border:0;background:none;padding:.6rem;margin-right:-.6rem;min-width:44px;min-height:44px;color:#111;white-space:nowrap}
+#open:hover{background:none;color:#111}
+.cart-txt{display:none}
+.cart-ico{display:block}
+.badge{display:flex;position:absolute;top:2px;right:-2px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#111;color:#fff;font:600 .7rem/18px var(--sans);justify-content:center}
+.badge:empty{display:none}
+nav{display:none;grid-column:auto;grid-row:auto;justify-self:stretch;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);padding:0 clamp(1rem,5vw,3.5rem) 1rem;box-shadow:0 12px 20px rgba(0,0,0,.06)}
+header.open nav{display:flex}
+nav a{padding:.9rem 0;font-size:1.1rem;border-top:1px solid var(--line)}
+
+/* Grotere schermen: alles schaalt mee, zodat de verhoudingen gelijk blijven aan een MacBook Air (1440 breed) */
+@media(min-width:1441px){html{font-size:calc(100vw/90)}}
+.menubtn svg,.cart-ico{width:1.625rem;height:1.625rem}
+
+/* Groter aanklikbaar vlak rond Explore */
+.banner a{z-index:1;cursor:pointer}
+.banner a::after{content:"";position:absolute;inset:-1.2em -2.4em}
+
+/* Reviews */
+.reviews{background:var(--card)}
+.rv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
+.rv-note{font-size:.85rem;color:#555}
+.rv-score{display:flex;align-items:baseline;gap:.6rem;color:#555}
+.rv-big{font:400 2.4rem/1 var(--serif);color:var(--ink)}
+.rv-track{margin-top:2rem;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(17rem,calc((100% - 3rem)/3));gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:.2rem}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-card{scroll-snap-align:start;margin:0;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1.6rem;display:flex;flex-direction:column;gap:1rem}
+.rv-stars{letter-spacing:.15em;font-size:.95rem}
+.rv-card blockquote{margin:0;font:italic 400 1.15rem/1.45 var(--serif);flex:1}
+.rv-card figcaption{display:flex;flex-direction:column;font-size:.9rem;border-top:1px solid var(--line);padding-top:.9rem}
+.rv-card figcaption span{color:#555}
+.rv-nav{display:flex;justify-content:flex-end;gap:.5rem;margin-top:1.2rem}
+.rv-nav button{width:44px;height:44px;border:1px solid var(--ink);border-radius:999px;background:var(--bg);font:inherit;cursor:pointer}
+.rv-nav button:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:760px){
+ .rv-track{grid-auto-columns:85%;gap:.8rem;margin-right:-1rem;padding-right:1rem}
+ .rv-card{padding:1.2rem}
+ .rv-big{font-size:2rem}
+}
+
+/* Logo als afbeelding: pas de hoogte aan om het logo groter of kleiner te maken */
+.logo img{display:block;height:2.1rem;width:auto}
+@media(max-width:760px){.logo img{height:1.7rem}}
